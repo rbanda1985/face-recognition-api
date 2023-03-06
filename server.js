@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex')
+const cors = require('cors');
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
@@ -21,6 +22,7 @@ const db = knex({
 });
 
 const app = express();
+app.use(cors());
 
 app.use(bodyParser.json())
 app.use(cors())
